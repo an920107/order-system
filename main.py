@@ -65,6 +65,11 @@ def main():
                         writer.writerow(["Name", "Price ($)", "Fat (kcal)", "Quantity"])
                         for good, quantity in cart.items():
                             writer.writerow([good.name, good.price, good.fat, quantity])
+                    print(f"Cart saved to saves/{filename}.csv")
+                
+                # Clear the cart
+                case "clear":
+                    cart.clear()
                 
                 # Help
                 case "?":
@@ -76,6 +81,7 @@ def main():
                             ["add", "Add a good to the cart"],
                             ["remove", "Remove a good from the cart"],
                             ["save", "Save the cart to a CSV file"],
+                            ["clear", "Clear the cart"],
                             ["exit", "Exit the program"],
                             ["?", "Show this help message"],
                         ]
